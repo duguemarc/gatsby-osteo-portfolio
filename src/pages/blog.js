@@ -1,4 +1,3 @@
-import { Button } from 'antd'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import Layout from '../components/layout'
@@ -23,7 +22,6 @@ const BlogPage = () => {
     return(
         <Layout>
             <h1>Blog</h1>
-            <Button>aa</Button>
             <ol className={blogStyles.posts}>
                 {data.allContentfulBlogPost.edges.map((edge) => {
                     return (
