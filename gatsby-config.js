@@ -19,7 +19,16 @@ module.exports = {
       }
 
     },
-    'gatsby-plugin-sass',
+  {
+      resolve: `gatsby-plugin-less`,
+      options: {
+          lessOptions: {
+              javascriptEnabled: true,
+          }
+      }
+  },
+
+  'gatsby-plugin-sass',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -27,6 +36,7 @@ module.exports = {
         path: `${__dirname}/src/`
       }
     },
+    
     {
       resolve: 'gatsby-plugin-antd',
       options: {

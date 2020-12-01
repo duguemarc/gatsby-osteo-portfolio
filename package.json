@@ -14,11 +14,13 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.3.0",
     "@contentful/rich-text-react-renderer": "^14.1.2",
     "antd": "^4.9.1",
     "gatsby": "^2.26.1",
     "gatsby-image": "^2.6.0",
     "gatsby-plugin-antd": "^2.2.0",
+    "gatsby-plugin-less": "^4.2.0",
     "gatsby-plugin-sass": "^2.6.0",
     "gatsby-plugin-sharp": "^2.9.1",
     "gatsby-remark-images": "^3.0.10",
@@ -34,7 +36,8 @@
   "devDependencies": {
     "env-cmd": "^10.1.0",
     "prettier": "2.1.2",
-    "typescript": "^4.1.2"
+    "typescript": "^4.1.2",
+    "less": "^3.12.2"
   },
   "repository": {
     "type": "git",
