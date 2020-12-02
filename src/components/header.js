@@ -1,8 +1,12 @@
+import { Menu } from 'antd'
+import { Header } from 'antd/lib/layout/layout'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
-import headerStyles from './header.module.scss'
+import headerStyles from './styles/header.module.scss'
+import '../styles/custom-theme.less'
 
-const Header = () => {
+
+const HeaderMain = () => {
 
     const data = useStaticQuery(graphql`
     query {
@@ -15,29 +19,18 @@ const Header = () => {
     `)
 
     return (
-        <header className={headerStyles.header}>
+        <Header className={headerStyles.header}>
+            <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
+                <Menu.Item key="1">nav 1</Menu.Item>
+                <Menu.Item key="2">nav 2</Menu.Item>
+                <Menu.Item key="3">nav 3</Menu.Item>
+            </Menu>
             
-            <Link className={headerStyles.title} to="/">
+            {/* <Link className={headerStyles.title} to="/">
                 {data.site.siteMetadata.title}
-            </Link>
-            <nav>
-                <ul className={headerStyles.navList}>
-                    <li>
-                        <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to="/blog">Blog</Link>
-                    </li>
-                    <li>
-                        <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to="/about">About</Link>
-                    </li>
-                    <li>
-                        <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to="/contact">Contact</Link>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+            </Link> */}
+        </Header>
     )
 }
 
-export default Header
+export default HeaderMain

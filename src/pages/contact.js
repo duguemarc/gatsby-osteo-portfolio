@@ -1,16 +1,16 @@
 import React from 'react'
-import Layout from '../components/layout'
+import LayoutMain from '../components/layout'
 
 const Contact = () => {
     return (
-        <Layout>
+        <LayoutMain>
             <h1>
                 Contact
             </h1>
             <p>
                 More informations <a href="https://www.google.com/">here</a>
             </p>
-        </Layout>
+        </LayoutMain>
     )
 }
 

@@ -1,8 +1,9 @@
+import { Footer } from 'antd/lib/layout/layout'
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'React'
-import footerStyles from './footer.module.scss'
+import footerStyles from './styles/footer.module.scss'
 
-const Footer = () => {
+const FooterMain = () => {
 
     const data = useStaticQuery(graphql`
     query {
@@ -13,10 +14,10 @@ const Footer = () => {
         }
       }`)
     return(
-        <footer className={footerStyles.footer}>
+        <Footer className={footerStyles.footer}>
             <p> Created by {data.site.siteMetadata.author}, 2020</p>
-        </footer>
+        </Footer>
     )
 }
 
-export default Footer
+export default FooterMain

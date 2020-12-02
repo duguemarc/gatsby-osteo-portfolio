@@ -1,10 +1,9 @@
 import { Button } from 'antd'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
-import Layout from '../components/layout'
+import LayoutMain from '../components/layout'
 import blogStyles from './blog.module.scss'
 import { FormOutlined } from '@ant-design/icons'
-
 
 
 const BlogPage = () => {
@@ -23,7 +22,7 @@ const BlogPage = () => {
     }    
     `)
     return(
-        <Layout>
+        <LayoutMain>
             <h1>Blog</h1>
 
             <Button type="primary" shape="round" icon={<FormOutlined />} size="large" >Prendre rendez-vous</Button>
@@ -39,7 +38,7 @@ const BlogPage = () => {
                     )
                 } )}
             </ol>
-        </Layout>
+        </LayoutMain>
     )
 }
 

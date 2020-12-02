@@ -1,19 +1,24 @@
+import { Layout } from 'antd'
 import React from 'react'
-import Footer from './footer'
-import Header from './header'
+import ContentMain from './content'
+import FooterMain from './footer'
+import HeaderMain from './header'
 
-import layoutStyles from './layout.module.scss'
+import layoutStyles from './styles/layout.module.scss'
+import '../styles/custom-theme.less'
 
-const Layout = (props) => {
+const LayoutMain = (props) => {
     return(
+        <Layout className={layoutStyles.layout}>
         <div className={layoutStyles.container}>
-            <div className={layoutStyles.content}>
-                <Header/>
+            <HeaderMain/>
+            <ContentMain>
                 {props.children}
-            </div>
-            <Footer/>
+            </ContentMain>
+            <FooterMain/>
         </div>
+        </Layout>
     )
 }
 
-export default Layout
+export default LayoutMain

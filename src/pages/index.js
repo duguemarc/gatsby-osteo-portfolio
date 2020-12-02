@@ -1,13 +1,14 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Layout from '../components/layout'
+import LayoutMain from '../components/layout'
+import indexStyles from './styles/index.module.scss'
 
 const IndexPage = () => {
   return(
-  <Layout>
+  <LayoutMain className={indexStyles.index}>
       <h1>Gatsby main page</h1>
       <p> Need a deveoper ? <Link to= "/contact">Contact me</Link></p>
-  </Layout>
+  </LayoutMain>
   )
 }
 
