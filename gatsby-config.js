@@ -26,13 +26,6 @@ module.exports = {
             modifyVars: {
             'theme': 'dark',
             'primary-color': '#001529',
-            // 'primary-color': '#AAAAAA',
-            // 'layout-header-background': '#AAAAAA',
-            // 'component-background': '#AAAAAA',
-            // 'btn-primary-color': 'white',
-            // 'text-color': 'fade(white, 85%)',
-            // 'text-color-secondary': 'fade(white, 45%)',
-
             },
             javascriptEnabled: true,
           }

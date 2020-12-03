@@ -9,11 +9,12 @@ const HeaderMain = () => {
 
     const data = useStaticQuery(graphql`
     query {
-        allContentfulMenuTab {
+        allContentfulMenuTab (sort: { fields: ordre, order: ASC }) {
           edges {
             node {
               label
               slug
+              ordre
             }
           }
         }
@@ -26,7 +27,7 @@ const HeaderMain = () => {
                 <Menu theme="dark" className= {headerStyles.menu} mode="horizontal" defaultSelectedKeys={['2']}>
                     {data.allContentfulMenuTab.edges.map((edge, index)=> {
                         return(                            
-                            <Menu.Item key={index}>{edge.node.label}</Menu.Item>
+                            <Menu.Item className={headerStyles.menuItem} key={index}>{edge.node.label}</Menu.Item>
                         )
                 
                     })}
