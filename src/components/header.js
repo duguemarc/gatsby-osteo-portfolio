@@ -3,6 +3,7 @@ import { Header } from 'antd/lib/layout/layout'
 import React from 'react'
 import headerStyles from './styles/header.module.scss'
 import { graphql, useStaticQuery } from 'gatsby'
+import { RightSquareFilled } from '@ant-design/icons'
 
 
 const HeaderMain = () => {
@@ -24,10 +25,11 @@ const HeaderMain = () => {
     return (
         <Affix>
             <Header className={headerStyles.header}>
-                <Menu theme="dark" className= {headerStyles.menu} mode="horizontal" defaultSelectedKeys={['2']}>
+                <Menu theme="dark" style={{'borderBottom':'3px solid white'}} className= {headerStyles.menu} mode="horizontal" defaultSelectedKeys={['2']}>
                     {data.allContentfulMenuTab.edges.map((edge, index)=> {
                         return(                            
-                            <Menu.Item className={headerStyles.menuItem} key={index}>{edge.node.label}</Menu.Item>
+                            <Menu.Item className={headerStyles.menuItem} key={index}><RightSquareFilled />
+                            <span>{edge.node.label}</span></Menu.Item>
                         )
                 
                     })}

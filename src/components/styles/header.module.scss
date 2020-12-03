@@ -1,4 +1,6 @@
 .header {
+    padding: 0;
+
 }
 
 .menu {
@@ -7,7 +9,6 @@
     position: 'fixed';
     left: 0;
     text-align: center;
-    text-transform: uppercase;
 
 }
 
@@ -18,4 +19,22 @@
        -moz-user-select: none; /* Old versions of Firefox */
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none;
+            .ant-menu-item-selected span {
+                border-bottom : 1px solid white !important;
+            }
+        
+
+}
+.ant-menu-item-selected {
+    span {
+        border-bottom : 1px solid white !important;
+    }
+
+}
+
+.ant-menu-item.ant-menu-item-only-child.ant-menu-item-selected {
+    span {
+        border-bottom : 1px solid white !important;
+    }
+
 }

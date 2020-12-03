@@ -35,6 +35,16 @@ module.exports = {
   'gatsby-plugin-sass',
   'gatsby-background-image',
   `gatsby-plugin-styled-components`,
+  {
+    resolve: `gatsby-plugin-google-fonts`,
+    options: {
+      fonts: [
+        'raleway',
+        'playfair'
+      ],
+      display: 'swap'
+    }
+  },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
