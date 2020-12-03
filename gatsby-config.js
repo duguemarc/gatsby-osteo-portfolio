@@ -41,6 +41,7 @@ module.exports = {
 
   'gatsby-plugin-sass',
   'gatsby-background-image',
+  `gatsby-plugin-styled-components`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {
