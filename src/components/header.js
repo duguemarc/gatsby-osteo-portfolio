@@ -1,35 +1,43 @@
-import { Menu } from 'antd'
+import { Affix, Button, Menu } from 'antd'
 import { Header } from 'antd/lib/layout/layout'
-import { Link, graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import headerStyles from './styles/header.module.scss'
-import '../styles/custom-theme.less'
+import { graphql, useStaticQuery } from 'gatsby'
 
 
 const HeaderMain = () => {
 
     const data = useStaticQuery(graphql`
     query {
-        site {
-          siteMetadata {
-            title
+        allContentfulMenuTab {
+          edges {
+            node {
+              label
+              slug
+            }
           }
         }
       }
     `)
 
     return (
-        <Header className={headerStyles.header}>
-            <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-                <Menu.Item key="1">nav 1</Menu.Item>
-                <Menu.Item key="2">nav 2</Menu.Item>
-                <Menu.Item key="3">nav 3</Menu.Item>
-            </Menu>
-            
-            {/* <Link className={headerStyles.title} to="/">
-                {data.site.siteMetadata.title}
-            </Link> */}
-        </Header>
+        <Affix>
+            <Header className={headerStyles.header}>
+                <Menu theme="dark" className= {headerStyles.menu} mode="horizontal" defaultSelectedKeys={['2']}>
+                    {data.allContentfulMenuTab.edges.map((edge, index)=> {
+                        return(                            
+                            <Menu.Item key={index}>{edge.node.label}</Menu.Item>
+                        )
+                
+                    })}
+                </Menu>
+                
+                {/* <Link className={headerStyles.title} to="/">
+                    {data.site.siteMetadata.title}
+                </Link> */}
+            </Header>
+        </Affix>
+
     )
 }
 

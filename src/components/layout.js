@@ -5,7 +5,6 @@ import FooterMain from './footer'
 import HeaderMain from './header'
 
 import layoutStyles from './styles/layout.module.scss'
-import '../styles/custom-theme.less'
 
 const LayoutMain = (props) => {
     return(

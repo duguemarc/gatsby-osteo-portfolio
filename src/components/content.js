@@ -1,9 +1,6 @@
-import { Breadcrumb } from 'antd'
 import { Content } from 'antd/lib/layout/layout'
-import { Link } from 'gatsby'
 import React from 'React'
 import contentStyles from './styles/content.module.scss'
-import '../styles/custom-theme.less'
 
 
 

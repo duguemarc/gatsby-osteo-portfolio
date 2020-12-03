@@ -1,14 +1,45 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import LayoutMain from '../components/layout'
 import indexStyles from './styles/index.module.scss'
+import { Button, Space } from 'antd'
+import { FormOutlined, MailOutlined } from '@ant-design/icons'
+import { BackgroundImage } from 'gatsby-background-image'
 
-const IndexPage = () => {
+
+
+export const query = graphql`
+query {
+  contentfulImageFullScreen(titre: {eq: "Main Image"}) {
+    image {
+      title
+      description
+      fluid {
+      	...GatsbyContentfulFluid_withWebp
+      }
+    }
+  }
+}
+`
+
+const IndexPage = (props) => {
   return(
   <LayoutMain className={indexStyles.index}>
-      <h1>Gatsby main page</h1>
-      <p> Need a deveoper ? <Link to= "/contact">Contact me</Link></p>
-  </LayoutMain>
+      <div className={indexStyles.mainViewContainer}>
+
+        <div className={indexStyles.mainViewContent}>
+          <h1>Raphaël Linares</h1>
+          <h2>Ostéopathe à Clermont-Ferrand</h2>
+          <div className={indexStyles.buttonContainer}>
+            <Space size={50}>
+              <Button type="primary" shape="round" icon={<FormOutlined />} size="large" >Prendre rendez-vous</Button> 
+              <Button type="primary" shape="round" icon={<MailOutlined />} size="large" >Me contacter</Button> 
+            </Space>            
+          </div>
+        </div>
+      </div>
+
+   </LayoutMain>
   )
 }
 
