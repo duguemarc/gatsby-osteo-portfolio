@@ -1,6 +1,5 @@
 .header {
     padding: 0;
-
 }
 
 .menu {
@@ -9,7 +8,10 @@
     position: 'fixed';
     left: 0;
     text-align: center;
-
+    background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #16222a, #3a6073); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #16222a, #3a6073) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
 }
 
 .menu-item {
@@ -22,15 +24,9 @@
             .ant-menu-item-selected span {
                 border-bottom : 1px solid white !important;
             }
-        
 
 }
-.ant-menu-item-selected {
-    span {
-        border-bottom : 1px solid white !important;
-    }
 
-}
 
 .ant-menu-item.ant-menu-item-only-child.ant-menu-item-selected {
     span {

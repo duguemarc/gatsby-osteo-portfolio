@@ -1,6 +1,12 @@
 
 $view-height: calc(100vh - 64px);
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 64px; /* height of sticky header */
+
+}
+
 body {
     font-family: "raleway";
     box-sizing: border-box;
@@ -13,23 +19,31 @@ body {
 }
 
 .main-view-container {
-    height: $view-height;
+    min-height: $view-height;
     display: flex;
     flex-direction:column;
     justify-content: center;
+    background-color: #000000;
+
 
     .main-view-content {
         z-index: 1;
+
         h1 {
             font-size: 3.5rem;
             margin: 0 0 0.5rem 0 ;
             text-transform: uppercase;
+            color:#FFFFFF;
             letter-spacing: 6px;
             font-weight: bold;
-            text-shadow: -2px -1px 2px #AAAAAA;        
+            text-shadow: -2px -1px 2px #AAAAAA;   
+            -webkit-text-fill-color: #555555;
+            -webkit-text-stroke-width: 1px;     
         }
         h2 {
             margin: 0 0 7rem 0;
+            color:#FFFFFF;
+
             // border-left : #001529 solid 2px;
             // border-right : #001529 solid 2px;
             display: inline-block;
@@ -40,18 +54,18 @@ body {
 }
 
 .main-image-container {
+
 }
 
 .main-image{
     width: 100%;
-    height: $view-height;
+    min-height: $view-height;
     position: absolute !important;
     background-position: bottom center !important;
     background-size: cover;   
     opacity: 0.5 !important;
     display: block;
     z-index: 0;
-
     
 
 }
@@ -65,4 +79,131 @@ body {
     align-content: center;
     text-transform: uppercase;
 }
+
+.cabinet-container {
+    min-height: $view-height;
+    display: flex;
+    background: red;
+    color:white;
+
+    h1{
+        color:white;
+    }
+}
+
+.votre-osteopathe {
+    min-height: $view-height;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    // background: radial-gradient(circle at center,#AAAAAA, #5194a0);
+    //  background-color: rgba(43, 134, 194, 0.9);
+    background-color: rgba(3, 34, 51, 1);
+    border-top: solid 3px white;
+     border-bottom: solid 3px white;
+     
+
+    // background: linear-gradient(to bottom, rgba(43, 134, 194, 0.9),rgba(0, 0, 0, 0.9)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    // background: linear-gradient(to top, #1D4350, #FFFFFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    // background: #1D4350;  /* fallback for old browsers */
+    //  background: -webkit-linear-gradient(to top, #43C6AC, #1D4350);  /* Chrome 10-25, Safari 5.1-6 */
+    //  background: linear-gradient(to top, #2b9680, #081816); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+          
+
+    .votre-osteopathe-title-container{
+        display: flex;
+        background-color: rgba(13, 68, 104, 0.9);
+        justify-content: center;
+        // box-shadow: 0 2px 1px 4px rgba(0, 0, 0, 1);
+        align-items: center;
+        border-radius: 0 0 99% 99%;
+        height: 150px;
+        width: 100%;
+
+        h1{
+            font-size: 2.5rem;
+            margin: 0;
+            text-transform: uppercase;
+            color:#FFFFFF;
+            letter-spacing: 6px;
+            font-weight: bold;
+            text-shadow: -2px -1px 2px #AAAAAA;   
+            -webkit-text-fill-color: #555555;
+            -webkit-text-stroke-width: 1px;     
+    
+        }
+        &:after {
+            content: "";
+                background-color: red;
+                display: block; 
+        }
+    }
+
+
+    .content-container {
+        display: flex;
+        flex-direction: row;
+        padding: 1rem;
+        height:75%;
+        flex-grow: 1;
+        width: 80%;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(3, 34, 51, 0.9);
+
+    }
+
+    .votre-osteopathe-image-container {
+        width: 30%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0rem;
+
+        
+        .ma-photo{
+            height: 100%;
+            width: 100%;
+            border: 2px solid white;
+        }
+
+    }
+
+    .votre-osteopathe-description-container{
+        width: 70%;
+        text-align: right;
+        border-right: white solid 5px;
+        padding: 0;
+
+        h2{
+            color: white;
+            padding: 0rem 2rem;
+
+        }
+
+        p{
+            background-color: rgba(3, 34, 51, 0.9);
+
+            display: inline-block;
+            margin: 0;
+            padding: 2rem 2rem 0 2rem;
+            border-radius: 5%;
+        }
+    }
+
+
+}
+
+// .main-view-container::before { 
+//     display: block; 
+//     content: " "; 
+//     margin-top: -64px; 
+//     height: 64px; 
+//     visibility: hidden; 
+//     pointer-events: none;
+//   }
 
